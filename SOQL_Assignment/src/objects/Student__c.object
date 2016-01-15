@@ -167,4 +167,11 @@
     <pluralLabel>Students</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>DOBVelidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>Date_Of_Birth__c  &gt;  TODAY()</errorConditionFormula>
+        <errorDisplayField>Date_Of_Birth__c</errorDisplayField>
+        <errorMessage>Student DOB can not be greater than TODAY</errorMessage>
+    </validationRules>
 </CustomObject>

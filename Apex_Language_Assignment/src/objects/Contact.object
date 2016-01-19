@@ -153,6 +153,7 @@
     <fields>
         <fullName>Experience__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>Number of years</inlineHelpText>
         <label>Experience</label>
         <precision>4</precision>
         <required>false</required>

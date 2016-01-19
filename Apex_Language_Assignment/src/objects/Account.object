@@ -130,6 +130,18 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>ContactIDs__c</fullName>
+        <description>Contact ID&apos;s related to account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fill contact ID of account.</inlineHelpText>
+        <label>ContactIDs</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CustomerPriority__c</fullName>
         <externalId>false</externalId>
         <label>Customer Priority</label>

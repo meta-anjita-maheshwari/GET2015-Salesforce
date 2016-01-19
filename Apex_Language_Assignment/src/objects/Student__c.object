@@ -47,6 +47,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>Student belongs to a particular class.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -57,9 +58,11 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Age__c</fullName>
+        <description>Age of student</description>
         <externalId>false</externalId>
         <formula>(TODAY() -  Date_Of_Birth__c)/365.25</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Fill age of student.</inlineHelpText>
         <label>Age</label>
         <precision>18</precision>
         <required>false</required>
@@ -70,7 +73,9 @@
     </fields>
     <fields>
         <fullName>Class__c</fullName>
+        <description>Class of the student.</description>
         <externalId>false</externalId>
+        <inlineHelpText>Select class of student.</inlineHelpText>
         <label>Class</label>
         <referenceTo>Class__c</referenceTo>
         <relationshipLabel>Students</relationshipLabel>
@@ -83,7 +88,9 @@
     </fields>
     <fields>
         <fullName>Date_Of_Birth__c</fullName>
+        <description>Date of birth of student</description>
         <externalId>false</externalId>
+        <inlineHelpText>Select date of birth of student</inlineHelpText>
         <label>Date Of Birth</label>
         <required>true</required>
         <trackTrending>false</trackTrending>
@@ -91,7 +98,9 @@
     </fields>
     <fields>
         <fullName>Email__c</fullName>
+        <description>Email of student</description>
         <externalId>false</externalId>
+        <inlineHelpText>Fill Email-id of student.</inlineHelpText>
         <label>Email</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -100,7 +109,9 @@
     </fields>
     <fields>
         <fullName>FirstName__c</fullName>
+        <description>First Name of student</description>
         <externalId>false</externalId>
+        <inlineHelpText>Fill First Name of student.</inlineHelpText>
         <label>First Name</label>
         <length>20</length>
         <required>false</required>
@@ -110,7 +121,9 @@
     </fields>
     <fields>
         <fullName>Last_Name__c</fullName>
+        <description>Last Name of student</description>
         <externalId>false</externalId>
+        <inlineHelpText>Fill Last Name of student.</inlineHelpText>
         <label>Last Name</label>
         <length>20</length>
         <required>true</required>
@@ -121,7 +134,9 @@
     <fields>
         <fullName>Married__c</fullName>
         <defaultValue>false</defaultValue>
+        <description>Status : If married or not</description>
         <externalId>false</externalId>
+        <inlineHelpText>Fill marital status.</inlineHelpText>
         <label>Married</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -146,7 +161,9 @@
     </fields>
     <fields>
         <fullName>Wife_Name__c</fullName>
+        <description>Wife Name of student</description>
         <externalId>false</externalId>
+        <inlineHelpText>Fill wife name, If any.</inlineHelpText>
         <label>Wife Name</label>
         <length>20</length>
         <required>false</required>

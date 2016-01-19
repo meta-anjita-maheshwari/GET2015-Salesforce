@@ -1,0 +1,3 @@
+Hi,
+
+Your expense approval of type {!Expense__c.Expense_Type__c} has been {!Expense__c.Status__c}

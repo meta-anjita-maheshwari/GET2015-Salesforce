@@ -1,0 +1,17 @@
+<apex:page standardController="Class__c">
+    <apex:form >
+        <apex:pageBlock title="Class Page">
+            <apex:pageMessages />
+            <apex:pageBlockSection columns="1">
+                 <apex:inputField value="{! Class__c.Name}"/><br/>
+                 <apex:inputField value="{! Class__c.Name__C}"/><br/>
+                 <apex:inputField value="{! Class__c.ClassTeacher__c}"/><br/>
+                 <apex:inputField value="{! Class__c.Fee__c}"/><br/>
+                 <apex:inputField value="{! Class__c.Board__c}"/><br/>
+                 <apex:outputText value="{! Class__c.No_Of_Students__c}"/><br/>
+                 <apex:inputField value="{! Class__c.Max_Size__c}"/><br/>
+                 <apex:commandButton value="Save" action="{! save }"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>

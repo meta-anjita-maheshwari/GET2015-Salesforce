@@ -1,0 +1,16 @@
+<apex:page standardController="Student__c" renderAs="pdf">
+	<apex:form >
+    	<apex:pageBlock title="Student Record">
+        	<apex:pageBlockSection columns="1"> 
+                <apex:inputField value="{! Student__c.Name}"/> : {! Student__c.Name}
+                <apex:inputField value="{! Student__c.Last_Name__c}"/> : {! Student__c.Last_Name__c}
+                <apex:inputText value="{! Student__c.Date_Of_Birth__c}"/> : {! Student__c.Date_Of_Birth__c}
+                <apex:inputField value="{! Student__c.Class__c}"/> : {! Student__c.Class__c}
+                <apex:inputField value="{! Student__c.Email__c}"/> : {! Student__c.Email__c}
+                <apex:inputText value="{! Student__c.Sex__c}"/> : {! Student__c.Sex__c}
+                <apex:inputField value="{! Student__c.Wife_Name__c}"/> : {! Student__c.Wife_Name__c}
+                <apex:inputField value="{! Student__c.Married__c}"/> : {! Student__c.Married__c}               
+       		</apex:pageBlockSection>
+   		</apex:pageBlock>  
+  	</apex:form>    
+</apex:page>

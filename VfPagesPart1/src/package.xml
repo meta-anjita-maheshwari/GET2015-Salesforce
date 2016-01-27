@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AccountFilterController</members>
+        <members>ConvertJsonController</members>
+        <members>ManageClassController</members>
+        <members>OpportunityPageController</members>
+        <members>SearchRecordsPagination</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>AccountFilter</members>
+        <members>AccountFiltersPagination</members>
+        <members>ContactRecordType</members>
+        <members>ConvertToJson</members>
+        <members>GeneratePdfForStudent</members>
+        <members>ManageClass</members>
+        <members>MyClassPage</members>
+        <members>MyStudentPage</members>
+        <members>OpportunityPage</members>
+        <name>ApexPage</name>
+    </types>
+    <version>35.0</version>
+</Package>

@@ -1,0 +1,62 @@
+<apex:page id="pageID" standardController="Student__c" recordSetVar="Students" title="Delete Students">
+    <apex:includescript value="/soap/ajax/30.0/connection.js"></apex:includescript>
+    <apex:includescript value="/soap/ajax/30.0/apex.js"></apex:includescript> 
+    <!-- PageBlock showing selected students from list view of students
+		 Button confirm : deletes selected students and redirects to list view page
+		 Button cancel : do nothing and redirects to list view page -->
+    <apex:form id="FormID">
+        <apex:pageBlock title="Selected Student" id="pblock">
+            <apex:pageBlockSection id="blockSection" columns="3">        
+                Student Details
+            </apex:pageBlockSection>    
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton onclick="confirmDelete();window.location='https://ap2.salesforce.com/a08'; return false;" value="Continue"/>
+                <apex:commandButton onclick="window.location='https://ap2.salesforce.com/a08'; return false;" value="Cancel"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form> 
+    
+    <!-- script takes selected records from list view page and displays on DeleteStudents page
+		 Deletes the selected student on Continue button click -->
+    <script>
+    sforce.connection.sessionId = "{!$Api.Session_ID}";
+    var idParameter = window.location.search.substring(1);
+    var param=idParameter.split('=');
+    var records=decodeURIComponent(param[1]).split(',');
+    
+    if(window.location.search.substring(1) !=""){
+        for (var i = 0; i < records.length; i++) {
+            records[i]="'"+records[i]+"'";
+        }
+        var myquery = "SELECT Id,Name,class__r.Name from Student__c where Id IN (" + records + ")";
+        result = sforce.connection.query(myquery);                                
+        records = result.getArray("records");
+        var newStudent;
+        var str="<table border='1'><tr><th>Id</th><th>Name</th><th>Class Name</th></tr>";
+        
+        for(var i=0;i<records.length;i++)
+        {    
+            newStudent=records[i];            
+            str=str+"<tr><td>"+newStudent.Id+"</td><td>"+newStudent.Name+"</td><td>"+newStudent.Class__r.Name+"</td></tr>";
+        }
+        
+        document.getElementById('{!$Component.pageID.FormID.pblock.blockSection}').innerHTML=str+"</table>";
+    }
+    
+    /* Deletes the selected student on Continue button click and shows the success message through alert */
+    function confirmDelete(){
+        var idList=[];
+        for (var i = 0; i < records.length; i++) {
+            newStudent=records[i];
+            idList[i]=newStudent.Id;
+        }
+        var delResult = sforce.connection.deleteIds([idList]);
+        
+        if (delResult[0].getBoolean("success")) {
+            alert("students deleted");
+        } else {
+            alert("failed to delete student");
+        }
+    }
+    </script>
+</apex:page>

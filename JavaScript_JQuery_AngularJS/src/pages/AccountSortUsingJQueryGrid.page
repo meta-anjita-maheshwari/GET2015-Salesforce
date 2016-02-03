@@ -1,0 +1,49 @@
+<apex:page standardController="Account" showHeader="false" sidebar="false">
+    <!-- table with id tab in which account detail is displayed through jQuery -->
+    <table id='tab'></table>
+    
+    <script src="{!$Resource.jQuery}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.12.1/css/ui.jqgrid.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.12.1/js/i18n/grid.locale-de.min.js" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.12.1/js/jquery.jqgrid.min.js" />
+        <script src="/soap/ajax/11.0/connection.js" />
+        <script src="/soap/ajax/11.0/apex.js" />
+        <style type="text/css">
+            .ui-jqgrid tr.jqgrow td {
+                height:auto;
+                vertical-align:text-top;
+                padding:6px 6px;
+                text-overflow:ellipsis;
+            }
+        </style>
+    
+    <script type="text/javascript">
+        window.onload=function() { 
+        document.getElementById("tab").style = "";
+        sforce.connection.sessionId = "{!$Api.Session_ID}";
+        try {
+            var gridData;
+            var obj;
+            var accountQuery = "SELECT Id,Name,Owner.name,Phone,(SELECT Id FROM Contacts) FROM Account order by isActive__C DESC,Name";
+            queryResult = sforce.connection.query(accountQuery); 
+            var accountRecords = queryResult.getArray("records");
+            $("#tab").jqGrid("GridUnload");
+            gridData = JSON.stringify(accountRecords);
+            obj = JSON.parse(gridData);    
+            jQuery("#tab").jqGrid({
+                data: accountRecords,
+                datatype: 'local',
+                colNames:['Id','Name','Manager','Phone','Number Contact'],
+                colModel:[
+                    {name:'Id',index:'Id', width:100,sortable:false},
+                    {name:'Name',index:'Name', width:100},
+                    {name:'Owner.Name',index:'Owner.Name', width:100,sortable:false},
+                    {name:'Phone',index:'Phone', width:100,sortable:false},
+                    {name:'Contacts.size',index:'Number Contact', width:100,sortable:false}],
+            });   
+        }catch(error) {
+            alert(error); 
+        }	
+    }
+    </script>
+</apex:page>

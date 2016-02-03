@@ -1,4 +1,0 @@
-<!-- Page using component AccountComponent -->
-<apex:page showHeader="false" standardStylesheets="false" sidebar="false" title="Account Records Sorting">    
-    <c:AccountComponent ></c:AccountComponent> 
-</apex:page>

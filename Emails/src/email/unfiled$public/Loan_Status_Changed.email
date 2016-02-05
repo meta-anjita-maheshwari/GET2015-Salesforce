@@ -1,0 +1,6 @@
+Hi {!Loan__c.Name} ,
+
+Your loan status has changed to {!Loan__c.Status__c} .
+Please check the link for checking your loan status {!Loan__c.Link} .
+
+Thanks,

@@ -1,6 +1,0 @@
-Hi {!Opportunity.OwnerFirstName}
-
-Your opportunity status is changed recently to {!Opportunity.StageName}.
-Check following link to see the opportunity changes : {!Opportunity.Link} .
-
-Thanks.

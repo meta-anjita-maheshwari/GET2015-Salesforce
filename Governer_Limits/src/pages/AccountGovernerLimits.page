@@ -1,0 +1,16 @@
+<!-- Page displaying 10 records on button click and also displaying percentage of DML consumed out of provided limit -->
+<apex:page controller="AccountGovernerLimitsController">
+   <apex:form >
+       <apex:pageBlock id="display" >
+           <apex:pageBlockTable value="{!accList}" var="acc" rendered="{!display}" >
+               <apex:column value="{!acc.Id}"/>
+               <apex:column value="{!acc.Name}"/>
+           </apex:pageBlockTable>
+           <apex:pageBlockSection rendered="{!display}" >
+               <apex:outputText label="Percentage of queries covered : "   value="{!percent}"/>
+           </apex:pageBlockSection>
+           <apex:pageBlockButtons location="bottom">
+               <apex:commandButton action="{!updateAccount}" value="Update List" reRender="display"/></apex:pageBlockButtons>
+       </apex:pageBlock>
+   </apex:form>
+</apex:page>

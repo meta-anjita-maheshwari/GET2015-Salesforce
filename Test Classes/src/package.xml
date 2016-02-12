@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>TestClassBeforeDelete</members>
+        <members>TestClassStudent</members>
+        <members>TestContactForAccount</members>
+        <members>TestConvertJsonController</members>
+        <members>TestListOfSObject</members>
+        <members>TestMyStack</members>
+        <members>TestOpportunityUpdate</members>
+        <members>TestRandomContactFactory</members>
+        <members>TestRestrictContactByName</members>
+        <members>TestStudentBeforeInsert</members>
+        <members>TestTeacherBeforeInsertUpdate</members>
+        <members>TestVerifyDate</members>
+        <name>ApexClass</name>
+    </types>
+    <version>35.0</version>
+</Package>
